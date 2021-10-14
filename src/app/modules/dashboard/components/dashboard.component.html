@@ -1,0 +1,14 @@
+<div class="master-display">
+  <div *ngFor="let video of videos" class="card">
+    <div class="card-body">
+      <video class="embed-responsive embed-responsive-16by9" preload="auto" disabled>
+        <source class="embed-responsive-item" [src]="video?.video" />
+      </video>
+      <h5 class="card-title">{{ video.name }}</h5>
+      <p class="card-text">{{ video.description }}</p>
+      <a [href]="video.video" target="_blank" (click)="download(video._id)" class="btn btn-primary">Download</a>
+      <a [routerLink]="['/video', video._id]" class="btn btn-primary watch-button">Watch</a>
+    </div>
+  </div>
+  <div class="no-videos" *ngIf="!loading && !videos.length">No videos found</div>
+</div>

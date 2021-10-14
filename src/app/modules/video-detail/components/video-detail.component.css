@@ -1,0 +1,36 @@
+video {
+  max-width: 800px;
+}
+
+.card {
+  margin: 10px;
+  width: 100%;
+  align-items: center;
+}
+
+.master-display {
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 75px;
+}
+
+.like-dislike-container {
+  text-align: center;
+}
+
+.like-container {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.dislike-container {
+  display: inline-block;
+}
+
+.watch-button {
+  margin-left: 10px;
+}
+
+.card-body {
+  text-align: center;
+}

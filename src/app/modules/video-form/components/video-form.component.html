@@ -1,0 +1,50 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="row g-3 upload-form">
+  <div class="mb-3">
+    <label for="videoName" class="form-label">Video name</label>
+    <input
+      formControlName="videoName"
+      type="text"
+      class="form-control"
+      id="videoName"
+      [ngClass]="{
+        'is-invalid':
+          (form.controls.videoName.touched || form.controls.videoName.dirty) &&
+          form.controls.videoName.invalid
+      }"
+    />
+    <app-input-error [control]="form.controls.videoName" name="Video name"></app-input-error>
+  </div>
+  <div class="mb-3">
+    <label for="description" class="form-label">Description</label>
+    <input
+      formControlName="description"
+      type="text"
+      class="form-control"
+      id="description"
+      [ngClass]="{
+        'is-invalid':
+          (form.controls.description.touched || form.controls.description.dirty) &&
+          form.controls.description.invalid
+      }"
+    />
+    <app-input-error [control]="form.controls.description" name="Description"></app-input-error>
+  </div>
+  <div class="mb-3">
+    <label for="videoName" class="form-label">File</label>
+    <input
+      formControlName="file"
+      (change)="onFileChange($event)"
+      type="file"
+      accept="video/mp4,video/x-m4v,video/*"
+      [ngClass]="{
+        'is-invalid':
+          (form.controls.file.touched || form.controls.file.dirty) && form.controls.file.invalid
+      }"
+      class="upload-btn btn btn-info"
+    />
+    <app-input-error [control]="form.controls.file" name="File"></app-input-error>
+  </div>
+  <div class="button-div">
+    <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Submit</button>
+  </div>
+</form>

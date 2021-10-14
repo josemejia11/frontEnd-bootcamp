@@ -1,0 +1,37 @@
+<div class="master-display">
+  <div *ngIf="loading">loading...</div>
+
+  <div *ngIf="!loading" class="card">
+    <video class="embed-responsive embed-responsive-16by9" controls>
+      <source class="embed-responsive-item" [src]="video?.video" />
+    </video>
+    <div class="card-body">
+      <div class="like-dislike-container">
+        <div class="like-container">
+          <button
+            (click)="onLikeClick('likes')"
+            class="btn btn-secondary"
+            [ngClass]="{ 'btn-success': likeType == 'likes' }"
+            [disabled]="likeType == 'likes'"
+          >
+            Like
+          </button>
+          <p>{{ likes }}</p>
+        </div>
+        <div class="dislike-container">
+          <button
+            (click)="onLikeClick('dislikes')"
+            class="btn btn-secondary"
+            [ngClass]="{ 'btn-success': likeType == 'dislikes' }"
+            [disabled]="likeType == 'dislikes'"
+          >
+            Dislike
+          </button>
+          <p>{{ dislikes }}</p>
+        </div>
+      </div>
+      <h5 class="card-title">{{ video?.name }}</h5>
+      <p class="card-text">{{ video?.description }}</p>
+    </div>
+  </div>
+</div>

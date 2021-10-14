@@ -1,0 +1,42 @@
+.card {
+  margin: 10px;
+  width: 25%;
+  display: inline-block;
+  align-items: center;
+}
+
+.master-display {
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 75px;
+}
+
+.like-dislike-container {
+  text-align: center;
+}
+
+.like-container {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.dislike-container {
+  display: inline-block;
+}
+
+.watch-button {
+  margin-left: 10px;
+}
+
+.no-videos {
+  text-align: center;
+  color: red;
+  font-size: 8vw;
+  border: 3px solid red;
+  margin: 20px;
+}
+
+video {
+  max-width: 250px;
+  max-height: 240px;
+}
